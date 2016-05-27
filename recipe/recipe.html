@@ -1,0 +1,14 @@
+<h1 ng-bind="recipe.data.name"></h1>
+<input id="servings" ng-model="recipe.servings" type="number">
+<label for="servings">Servings</label>
+<ul>
+    <li ng-repeat="ingredient in recipe.data.ingredients">
+        <amo-ingredient
+            ingredient="ingredient"
+            on-toggle="recipe.onToggleIngredient(value)"
+            servings="recipe.servings"
+            tooltip="Click to select ingredient">
+        </amo-ingredient>
+    </li>
+</ul>
+<h2 ng-bind-template="{{ recipe.count }} / {{ recipe.data.ingredients.length }} ingredients"></h2>

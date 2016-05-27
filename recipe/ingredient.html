@@ -1,0 +1,12 @@
+<label>
+    <input
+        ng-attr-title="{{ ingredient.tooltip }}"
+        ng-change="ingredient.onToggleIngredient()"
+        ng-model="ingredient.isChecked"
+        type="checkbox">
+    <input
+        ng-model="ingredient.getSetAmount"
+        ng-model-options="{ getterSetter: true }"
+        type="number">
+    <span ng-bind-template="{{ ingredient.ingredient.unit }} {{ ingredient.ingredient.name }}"></span>
+</label>
